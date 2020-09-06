@@ -1,0 +1,75 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * @Application ：interfaceSkeleton 
+ * @Version     : 1.0.0
+ * @Author      : @小小只 <soinco@qq.com>
+ * @Since       : {%year%}
+ * @LastAuthor  : @小小只 <soinco@qq.com>
+ * @lastTime    : {%year%}
+ * @Github      : https://github.com/littlezo
+ * @Copyright   : 2017-2020 @小小只
+ * @联系方式     : QQ:970055999  WeChat: littlezov email: soinco@qq.com
+ * @版权声明     : @小小只 拥有所有权利,未取得授权禁止任何形式的代码拷贝、派生行为 如需引用 需取得所有者授权方可
+ * @FilePath    :
+ */
+
+namespace {%app%}\{%layer%};
+
+use think\Model;
+use think\model\concern\SoftDelete;
+
+/**
+ * {%suffix%}
+ * @Version     : 1.0.0
+ * @Author      : @小小只 <soinco@qq.com>
+ * @Since       : {%year%}
+ * @LastAuthor  : @小小只 <soinco@qq.com>
+ * @lastTime    : {%year%}
+ *
+ */
+
+class {%suffix%} extends Model
+{
+    // 定义主键
+    protected $pk = 'id';
+
+    // 设置当前模型的数据库连接
+    // protected $connection = '';
+
+    // 设置当前模型对应的完整数据表名称
+    // protected $table = '';
+
+    // 开启自动写入时间戳字段
+    protected $autoWriteTimestamp = true;
+
+    // 关闭自动写入指定字段时间戳写入
+    // protected $updateTime = false;
+
+    // 定义时间戳字段名
+    protected $createTime = 'create_time';
+    protected $updateTime = 'update_time';
+
+    // 设置废弃字段
+    protected $disuse = [];
+
+    // 设置字段自动转换类型
+    // protected $type = [
+    //     'create_time'  =>  'timestamp',
+    // ];
+
+    // 软删除定义
+    use SoftDelete;
+    protected $deleteTime = 'delete_time';
+
+    // 定义软删除字段的默认值
+    protected $defaultSoftDelete = 0;
+
+    // 初始化模型
+    public static function init()
+    {
+        parent::init();
+    }
+}
